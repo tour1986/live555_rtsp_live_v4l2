@@ -138,8 +138,10 @@ void Device::init_camera(void)
 	if (ioctl(fd, VIDIOC_S_FMT, &tv_fmt)< 0) 
 	{
 		fprintf(stderr,"VIDIOC_S_FMT set err\n");
-		exit(-1);
-		close(fd);
+		//经测试不影响使用，不需要退出
+		return;
+		//exit(-1);
+		//close(fd);
 	}
 	
 }
